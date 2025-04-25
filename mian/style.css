@@ -1,0 +1,151 @@
+/* Thiết lập chung cho trang */
+body {
+  background: #fdf6e3;
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Phong bì thư */
+.envelope {
+  position: relative;
+  width: 450px;
+  height: 400px;
+  background: #f7c6d0; /* Màu hồng nhẹ cho thân phong bì */
+  border-radius: 8px; /* Bo góc phong bì */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  transition: background 1s ease;
+  border: 2px solid #e0c097; /* Viền màu be rõ ràng */
+}
+
+/* Nắp phong bì */
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: #f5a3b5; /* Màu hồng đậm cho nắp phong bì */
+  clip-path: polygon(0 0, 100% 0, 50% 100%); /* Hình tam giác cho nắp phong bì */
+  z-index: 2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ cho nắp phong bì */
+  transition: opacity 0.5s ease;
+}
+
+/* Bức thư */
+.letter {
+  position: absolute;
+  top: 0; /* Đảm bảo thư nằm ngay dưới nắp phong bì */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Thư chiếm toàn bộ chiều cao phong bì */
+  background: #fff; /* Làn màu trắng nhẹ cho thư */
+  padding: 20px;
+  box-sizing: border-box;
+  line-height: 1.7;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+  z-index: 1;
+  border-radius: 10px; /* Bo góc thư */
+  border: 1px solid #e0c097; /* Viền thư */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Bóng nhẹ để tạo chiều sâu */
+  font-family: 'Patrick Hand', 'Georgia', serif; /* Font chữ tay */
+  overflow-y: auto; /* Cho phép cuộn nếu nội dung dài */
+  background: linear-gradient(135deg, #ffffff 0%, #fceabb 100%); /* Nền thư với gradient nhẹ */
+}
+
+/* Họa tiết trang trí ở các góc thư */
+.letter::before,
+.letter::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/Heart_icon.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.3;
+}
+
+.letter::before {
+  top: 10px;
+  left: 10px;
+}
+
+.letter::after {
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Khi thư đã mở */
+.letter.open {
+  top: 0;
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 3;
+}
+
+/* Tiêu đề và chữ trong thư */
+.letter h1 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+  text-shadow: 1px 1px 2px #e0c097; /* Thêm hiệu ứng bóng nhẹ cho tiêu đề */
+}
+
+.signature {
+  margin-top: 30px;
+  text-align: right;
+  font-style: italic;
+  color: #555;
+  font-family: 'Dancing Script', cursive; /* Sử dụng font chữ đẹp cho chữ ký */
+  font-size: 18px;
+}
+
+/* Nút mở thư */
+.open-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background: #8b5e3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 3;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.open-btn:hover {
+  background: #6f472a;
+}
+
+/* Khi mở thư xong: ẩn flap và nút */
+.envelope.opened .flap,
+.envelope.opened .open-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.envelope {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bóng cho phong bì */
+}
+
+.letter {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Bóng cho lá thư */
+}

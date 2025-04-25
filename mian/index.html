@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bức Thư Bí Mật</title>
+    <!-- Thêm link tải font Patrick Hand -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+<body>
+  <div class="envelope" id="envelope">
+    <div class="flap" id="flap"></div>
+    <div class="letter" id="letter">
+      <h1>Thân gửi người mình thương,</h1>
+      <p>
+        Mình viết bức thư này để chia sẻ vài điều trong lòng.
+        Thật sự thì mình chưa bao giờ ngừng hay bớt thích cậu đi một chút nào. Nhưng hiện tại, mình nghĩ là chúng ta cần một khoảng lặng để nhìn nhận lại mọi thứ trong thời gian qua, cũng như để ổn định lại cảm xúc.
+        Những gì mình dành cho cậu một cách chân thành trong suốt thời gian qua, không biết có chạm được đến trái tim cậu không, hay chỉ khiến cậu cảm động (đừng trả lời vội, hãy suy nghĩ thật kỹ).
+        Mình cũng muốn hỏi cậu một câu: Sau gần 6 tháng quen nhau, thì cậu vẫn thấy mình không an toàn ở chỗ nào? Và mình có thể làm gì để cậu cảm thấy an toàn hơn?
+        Nếu cậu muốn tiếp tục để mối quan hệ của mình phát triển, thì sự chân thành và tình cảm của mình sẽ vẫn tiếp tục lớn dần theo thời gian.
+        Và đương nhiên, nếu cậu đã chán, cảm thấy mối quan hệ này không thể phát triển thêm được nữa, và muốn dừng lại, thì mình tôn trọng quyết định của cậu. Mình sẽ rời đi.
+        Cũng xin cậu đừng bao giờ tự trách bản thân hay cảm thấy có lỗi khi đưa ra quyết định này. Bởi nếu cậu không còn thích mà vẫn cố gắng duy trì, thì cuối cùng cũng không tốt cho cả hai.
+        Đến đây thì cậu đừng phản hồi gì vội. Hãy cho chúng mình một khoảng thời gian để suy nghĩ. Khi nào mình sẵn sàng nghe câu trả lời, mình sẽ nhắn cho cậu trước.
+      </p>
+      <p class="signature">
+        Thân mến<br/>
+      </p>
+    </div>
+    <button class="open-btn" id="openBtn" onclick="openLetter()">Mở thư</button>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById("letter").classList.add("open");
+      document.getElementById("envelope").classList.add("opened");
+    }
+  </script>
+</body>
+</html>
